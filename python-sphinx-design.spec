@@ -1,20 +1,25 @@
+%define module sphinx-design
+%define oname sphinx_design
+
 Name:		python-sphinx-design
-Version:	0.6.1
-Release:	2
-Source0:	https://files.pythonhosted.org/packages/source/s/sphinx-design/sphinx_design-%{version}.tar.gz
-Summary:	A sphinx extension for designing beautiful, view size responsive web components.
-URL:		https://pypi.org/project/sphinx-design/
-License:	None
+Summary:	A sphinx extension for designing beautiful, view size responsive web components
+Version:	0.7.0
+Release:	1
+License:	MIT
 Group:		Development/Python
+URL:		https://github.com/executablebooks/sphinx-design
+Source0:	https://github.com/executablebooks/sphinx-design/archive/v%{version}/%{name}-%{version}.tar.gz
+
 BuildSystem:	python
+BuildOption(prep):	-p1
 BuildArch:	noarch
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(flit-core)
+BuildRequires:	python%{pyver}dist(wheel)
 
 %description
 A sphinx extension for designing beautiful, view size responsive web components.
 
-%prep
-%autosetup -p1 -n sphinx_design-%{version}
-
 %files
-%{py_sitedir}/sphinx_design
-%{py_sitedir}/sphinx_design-*.*-info
+%{python_sitelib}/%{oname}
+%{python_sitelib}/%{oname}-%{version}.dist-info
