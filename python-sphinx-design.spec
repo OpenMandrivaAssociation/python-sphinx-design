@@ -4,7 +4,7 @@
 Name:		python-sphinx-design
 Summary:	A sphinx extension for designing beautiful, view size responsive web components
 Version:	0.7.0
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Python
 URL:		https://github.com/executablebooks/sphinx-design
